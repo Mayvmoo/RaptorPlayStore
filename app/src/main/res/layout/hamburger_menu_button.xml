@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="44dp"
+    android:layout_height="44dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+    <!-- Gold gradient circle background with shadow -->
+    <View
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/hamburger_menu_button_background"
+        android:elevation="8dp" />
+
+    <!-- Hamburger icon -->
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_menu_hamburger_white"
+        android:contentDescription="Menu" />
+
+</FrameLayout>
+

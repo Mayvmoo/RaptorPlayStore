@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- AppTheme Colors - Blauw/Goud thema (iOS matching) -->
+    <!-- Primary Colors -->
+    <color name="primary_blue">#3366CC</color>        <!-- RGB(0.2, 0.4, 0.8) -->
+    <color name="gold">#D9A621</color>               <!-- RGB(0.85, 0.65, 0.13) -->
+    <color name="light_gold">#FFD700</color>         <!-- RGB(1.0, 0.84, 0.0) -->
+    <color name="dark_blue">#1A3366</color>          <!-- RGB(0.1, 0.2, 0.4) -->
+    
+    <!-- Splash Screen Colors -->
+    <color name="splash_blue_start">#1A4DB3</color>  <!-- RGB(0.1, 0.3, 0.7) -->
+    <color name="splash_blue_end">#2659BF</color>     <!-- RGB(0.15, 0.35, 0.75) -->
+    <color name="splash_circle_blue">#3366CC</color>  <!-- RGB(0.2, 0.4, 0.8) -->
+    <color name="splash_gold">#D9A621</color>         <!-- RGB(0.85, 0.65, 0.13) -->
+    <color name="splash_gold_light">#FFD700</color>   <!-- RGB(1.0, 0.84, 0.0) -->
+    <color name="splash_white_opacity_30">#4DFFFFFF</color>  <!-- white.opacity(0.3) -->
+    <color name="splash_white_opacity_60">#99FFFFFF</color>  <!-- white.opacity(0.6) -->
+    <color name="splash_white_opacity_80">#CCFFFFFF</color>  <!-- white.opacity(0.8) -->
+    <color name="splash_gold_shadow">#99D9A621</color>       <!-- gold.opacity(0.6) -->
+    
+    <!-- Opacity variants -->
+    <color name="white_opacity_10">#1AFFFFFF</color>  <!-- white.opacity(0.1) -->
+    <color name="white_opacity_15">#26FFFFFF</color>  <!-- white.opacity(0.15) -->
+    <color name="white_opacity_30">#4DFFFFFF</color>  <!-- white.opacity(0.3) -->
+    <color name="white_opacity_40">#66FFFFFF</color>  <!-- white.opacity(0.4) -->
+    <color name="white_opacity_60">#99FFFFFF</color>  <!-- white.opacity(0.6) -->
+    <color name="white_opacity_70">#B3FFFFFF</color>  <!-- white.opacity(0.7) -->
+    <color name="white_opacity_80">#CCFFFFFF</color>  <!-- white.opacity(0.8) -->
+    <color name="white_opacity_90">#E6FFFFFF</color>  <!-- white.opacity(0.9) -->
+    
+    <color name="gold_opacity_20">#33D9A621</color>   <!-- gold.opacity(0.2) -->
+    <color name="gold_opacity_40">#66D9A621</color>   <!-- gold.opacity(0.4) -->
+    <color name="gold_opacity_50">#80D9A621</color>   <!-- gold.opacity(0.5) -->
+    <color name="primary_blue_opacity_10">#1A3366CC</color>  <!-- primaryBlue.opacity(0.1) -->
+    <color name="primary_blue_opacity_15">#263366CC</color>  <!-- primaryBlue.opacity(0.15) -->
+    <color name="primary_blue_opacity_20">#333366CC</color>  <!-- primaryBlue.opacity(0.2) -->
+    
+    <!-- Additional opacity variants -->
+    <color name="white_opacity_20">#33FFFFFF</color>  <!-- white.opacity(0.2) -->
+    <color name="gold_opacity_30">#4DD9A621</color>   <!-- gold.opacity(0.3) -->
+    
+    <!-- Additional colors -->
+    <color name="red">#FF0000</color>  <!-- For logout button -->
+    <color name="call_red">#FF3B30</color>  <!-- For end call button -->
+    <color name="orange">#FF9500</color>  <!-- Orange color -->
+    <color name="green">#34C759</color>  <!-- Green color -->
+    <color name="yellow">#FFCC00</color>  <!-- Yellow color -->
+</resources>

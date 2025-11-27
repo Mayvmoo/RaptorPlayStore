@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Performance optimizations -->
+    <bool name="enable_hardware_acceleration">true</bool>
+    <bool name="enable_view_caching">true</bool>
+    <integer name="animation_duration_fast">200</integer>
+    <integer name="animation_duration_normal">300</integer>
+    <integer name="animation_duration_slow">500</integer>
+</resources>
+

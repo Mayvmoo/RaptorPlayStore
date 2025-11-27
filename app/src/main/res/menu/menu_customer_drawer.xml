@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:id="@+id/mainMenuGroup">
+        <item
+            android:id="@+id/nav_personal_info"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Persoonlijke informatie" />
+
+        <item
+            android:id="@+id/nav_order_history"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="Order historie" />
+
+        <item
+            android:id="@+id/nav_login_security"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="Inloggen en beveiliging" />
+
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="Privacy" />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="Help" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Over" />
+    </group>
+
+    <group
+        android:id="@+id/logoutGroup"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"
+            android:title="Uitloggen" />
+    </group>
+
+</menu>

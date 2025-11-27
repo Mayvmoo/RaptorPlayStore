@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/primary_gradient"
+    tools:context=".ui.orders.CreateOrderActivity">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:tint="@color/white"
+            android:contentDescription="Terug"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nieuwe Bezorging"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintBottom_toTopOf="@id/bottomButtonContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Delivery Mode Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bezorging Type"
+                android:textSize="14sp"
+                android:textColor="@color/white_opacity_80"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <!-- Standard Delivery -->
+                <LinearLayout
+                    android:id="@+id/standardDeliveryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:background="@drawable/delivery_mode_selected"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/standardIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_share"
+                        android:tint="@color/primary_blue"
+                        android:contentDescription="Standaard" />
+
+                    <TextView
+                        android:id="@+id/standardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Standaard"
+                        android:textSize="12sp"
+                        android:textColor="@color/primary_blue"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+                <!-- Express Delivery -->
+                <LinearLayout
+                    android:id="@+id/expressDeliveryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:background="@drawable/delivery_mode_unselected"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/expressIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_send"
+                        android:tint="@color/white_opacity_60"
+                        android:contentDescription="Express" />
+
+                    <TextView
+                        android:id="@+id/expressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Express"
+                        android:textSize="12sp"
+                        android:textColor="@color/white_opacity_60"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+                <!-- Same Day Delivery -->
+                <LinearLayout
+                    android:id="@+id/sameDayDeliveryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:background="@drawable/delivery_mode_unselected"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/sameDayIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_today"
+                        android:tint="@color/white_opacity_60"
+                        android:contentDescription="Dezelfde dag" />
+
+                    <TextView
+                        android:id="@+id/sameDayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vandaag"
+                        android:textSize="12sp"
+                        android:textColor="@color/white_opacity_60"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Urgent Toggle -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="@drawable/input_field_background"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spoed Bezorging"
+                        android:textSize="16sp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Krijgt prioriteit bij toewijzing"
+                        android:textSize="12sp"
+                        android:textColor="@color/white_opacity_60"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/urgentSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="@color/gold"
+                    android:trackTint="@color/white_opacity_30" />
+
+            </LinearLayout>
+
+            <!-- Schedule Section -->
+            <LinearLayout
+                android:id="@+id/scheduleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="@drawable/input_field_background"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_my_calendar"
+                    android:tint="@color/gold"
+                    android:contentDescription="Plannen" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bezorging Plannen"
+                        android:textSize="16sp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/scheduleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zo snel mogelijk"
+                        android:textSize="12sp"
+                        android:textColor="@color/white_opacity_60"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_media_play"
+                    android:tint="@color/white_opacity_60"
+                    android:contentDescription="Selecteren" />
+
+            </LinearLayout>
+
+            <!-- Sender Section Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ophaaladres"
+                android:textSize="14sp"
+                android:textColor="@color/white_opacity_80"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Sender Name -->
+            <EditText
+                android:id="@+id/senderNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Naam verzender"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_opacity_60"
+                android:background="@drawable/input_field_background"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Sender Address -->
+            <EditText
+                android:id="@+id/senderAddressInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="80dp"
+                android:hint="Ophaaladres"
+                android:inputType="textPostalAddress|textMultiLine"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_opacity_60"
+                android:background="@drawable/input_field_background"
+                android:padding="12dp"
+                android:gravity="top"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Destination Section Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bestemmingsadres"
+                android:textSize="14sp"
+                android:textColor="@color/white_opacity_80"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Partner Selection Button -->
+            <LinearLayout
+                android:id="@+id/partnerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="@drawable/input_field_background"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    android:tint="@color/gold"
+                    android:contentDescription="Partner" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Selecteer Partner"
+                        android:textSize="16sp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/partnerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kies uit je partners of voer handmatig in"
+                        android:textSize="12sp"
+                        android:textColor="@color/white_opacity_60"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_media_play"
+                    android:tint="@color/white_opacity_60"
+                    android:contentDescription="Selecteren" />
+
+            </LinearLayout>
+
+            <!-- Destination Name -->
+            <EditText
+                android:id="@+id/destinationNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Naam ontvanger"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_opacity_60"
+                android:background="@drawable/input_field_background"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Destination Address -->
+            <EditText
+                android:id="@+id/destinationAddressInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="80dp"
+                android:hint="Bestemmingsadres"
+                android:inputType="textPostalAddress|textMultiLine"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_opacity_60"
+                android:background="@drawable/input_field_background"
+                android:padding="12dp"
+                android:gravity="top"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Notes Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Extra informatie"
+                android:textSize="14sp"
+                android:textColor="@color/white_opacity_80"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/notesInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:hint="Notities voor de koerier (optioneel)"
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_opacity_60"
+                android:background="@drawable/input_field_background"
+                android:padding="12dp"
+                android:gravity="top"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Photo Attachment -->
+            <LinearLayout
+                android:id="@+id/attachPhotoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="@drawable/input_field_background"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:tint="@color/gold"
+                    android:contentDescription="Foto" />
+
+                <TextView
+                    android:id="@+id/attachPhotoText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Foto toevoegen"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="12dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_input_add"
+                    android:tint="@color/white_opacity_60"
+                    android:contentDescription="Toevoegen" />
+
+            </LinearLayout>
+
+            <!-- Price Estimate -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="@drawable/price_estimate_background"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Geschatte prijs"
+                        android:textSize="14sp"
+                        android:textColor="@color/white_opacity_80" />
+
+                    <TextView
+                        android:id="@+id/priceEstimateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€ 12,50"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gold"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Incl. BTW"
+                    android:textSize="12sp"
+                    android:textColor="@color/white_opacity_60" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        android:id="@+id/bottomButtonContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/bottom_container_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/button_primary_enabled"
+            android:elevation="10dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/createButtonProgress"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/white"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/createButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Bezorging Aanmaken"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+            </FrameLayout>
+
+        </Button>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/step_card_background"
+    android:padding="24dp"
+    android:elevation="8dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/backFromTermsButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/step_indicator_inactive"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Voorwaarden &amp; Verificatie"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+    </LinearLayout>
+
+    <!-- Terms Checkbox -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <CheckBox
+            android:id="@+id/subviewTermsCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/gold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ik accepteer de algemene voorwaarden en privacybeleid"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- Phone Number -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefoonnummer voor verificatie *"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/subviewTermsPhoneNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="+31 6 12345678"
+            android:inputType="phone"
+            android:text="+31"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white_opacity_60"
+            android:background="@drawable/input_field_background"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
+    <!-- Send Code Button -->
+    <Button
+        android:id="@+id/sendVerificationCodeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Verstuur verificatiecode"
+        android:textColor="@color/white"
+        android:background="@drawable/button_primary_enabled"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Verification Code Container (initially hidden) -->
+    <LinearLayout
+        android:id="@+id/verificationCodeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voer de 6-cijferige code in"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/verificationCodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="000000"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white_opacity_60"
+            android:background="@drawable/input_field_background"
+            android:padding="16dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:letterSpacing="0.2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code niet ontvangen? Probeer opnieuw"
+            android:textSize="12sp"
+            android:textColor="@color/white_opacity_60"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="resendVerificationCode" />
+
+    </LinearLayout>
+
+    <!-- Register Button (shown when code is verified) -->
+    <Button
+        android:id="@+id/registerFromTermsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Registreren"
+        android:textColor="@color/white"
+        android:background="@drawable/button_primary_enabled"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+
+</LinearLayout>
+

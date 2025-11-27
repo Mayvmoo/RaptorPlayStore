@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/primary_gradient"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:paddingTop="60dp"
+            android:paddingBottom="40dp">
+
+            <!-- Logo Header (iOS: spacing: 40 tussen logo en form) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="40dp">
+
+                <!-- Logo Circle -->
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Shadow layer -->
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/logo_shadow"
+                        android:alpha="0.5" />
+
+                    <!-- Main logo circle with gradient (blue to gold) -->
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/splash_logo_circle_gradient"
+                        android:elevation="15dp" />
+
+                    <!-- Bird icon centered -->
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_bird"
+                        android:contentDescription="Raptor Logo" />
+
+                </FrameLayout>
+
+                <!-- App Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RAPTOR"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-rounded"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Subtitle -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Klant Portaal"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/white_opacity_80" />
+
+            </LinearLayout>
+
+            <!-- Login Form (iOS: VStack(spacing: 20)) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="20dp"
+                android:layout_marginTop="40dp">
+
+                <!-- Email Field -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="E-mailadres"
+                        android:textSize="14sp"
+                        android:textColor="@color/white_opacity_90"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:hint="jouw@email.nl"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white_opacity_60"
+                        android:background="@drawable/input_field_background"
+                        android:padding="16dp"
+                        android:importantForAutofill="yes" />
+
+                </LinearLayout>
+
+                <!-- Password Field -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wachtwoord"
+                        android:textSize="14sp"
+                        android:textColor="@color/white_opacity_90"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/passwordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:hint="Wachtwoord"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white_opacity_60"
+                        android:background="@drawable/input_field_background"
+                        android:padding="16dp"
+                        android:importantForAutofill="yes" />
+
+                </LinearLayout>
+
+                <!-- Remember Me (iOS: HStack(spacing: 12)) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="8dp"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/rememberMeCheckBox"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_square"
+                        android:tint="@color/white_opacity_60"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Onthoud mij" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Onthoud mij"
+                        android:textSize="14sp"
+                        android:textColor="@color/white_opacity_90"
+                        android:layout_marginStart="12dp" />
+
+                </LinearLayout>
+
+                <!-- Login Button -->
+                <LinearLayout
+                    android:id="@+id/loginButtonContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:background="@drawable/button_primary_enabled"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginBottom="12dp">
+
+                    <ProgressBar
+                        android:id="@+id/loginProgressBar"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/loginButtonIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_right_circle"
+                        android:tint="@color/white"
+                        android:layout_marginEnd="8dp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/loginButtonText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inloggen"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <!-- Forgot Password Link -->
+                <TextView
+                    android:id="@+id/forgotPasswordButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wachtwoord vergeten?"
+                    android:textSize="14sp"
+                    android:textColor="@color/white_opacity_70"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Register Link -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/registerLink">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nog geen account? "
+                        android:textSize="14sp"
+                        android:textColor="@color/white_opacity_70" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Registreren"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Hidden Registration Fields (for compatibility) - Using ViewStub for better performance -->
+            <ViewStub
+                android:id="@+id/hiddenFieldsStub"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:inflatedId="@+id/hiddenFieldsContainer"
+                android:layout="@layout/stub_hidden_registration_fields" />
+
+            <!-- Status (hidden by default, shown on error) -->
+            <TextView
+                android:id="@+id/statusTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:padding="16dp"
+                android:background="@drawable/input_field_background"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

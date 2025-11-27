@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Matching iOS: Color(red: 0.85, green: 0.7, blue: 0.2) to Color(red: 1.0, green: 0.85, blue: 0.3) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:type="linear"
+        android:angle="0"
+        android:startColor="#D9B333"
+        android:endColor="#FFD94D" />
+</shape>

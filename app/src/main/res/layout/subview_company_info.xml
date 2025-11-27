@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/step_card_background"
+    android:padding="24dp"
+    android:elevation="8dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/backFromCompanyInfoButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/step_indicator_inactive"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bedrijfsgegevens"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+    </LinearLayout>
+
+    <!-- Company Name -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bedrijfsnaam *"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/subviewCompanyNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Naam van je bedrijf"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white_opacity_60"
+            android:background="@drawable/input_field_background"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
+    <!-- Company Address -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bedrijfsadres *"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/subviewCompanyStreetAddressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Straatnaam"
+            android:inputType="textPostalAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white_opacity_60"
+            android:background="@drawable/input_field_background"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/subviewCompanyHouseNumberEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:hint="Huisnummer"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_opacity_60"
+                android:background="@drawable/input_field_background"
+                android:padding="16dp"
+                android:layout_marginEnd="12dp" />
+
+            <EditText
+                android:id="@+id/subviewCompanyPostalCodeEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:minHeight="48dp"
+                android:hint="1234 AB"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_opacity_60"
+                android:background="@drawable/input_field_background"
+                android:padding="16dp"
+                android:layout_marginStart="12dp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/subviewCompanyCityEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Plaats"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white_opacity_60"
+            android:background="@drawable/input_field_background"
+            android:padding="16dp"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+
+    <!-- KVK Number -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KVK-nummer"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/subviewKvkNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="12345678"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white_opacity_60"
+            android:background="@drawable/input_field_background"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
+    <!-- BTW Number -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BTW-nummer"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/subviewBtwNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="NL123456789B01"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white_opacity_60"
+            android:background="@drawable/input_field_background"
+            android:padding="16dp" />
+
+        </LinearLayout>
+
+    <!-- Continue Button -->
+    <Button
+        android:id="@+id/continueFromCompanyInfoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Doorgaan"
+        android:textColor="@color/white"
+        android:background="@drawable/button_primary_enabled"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
+
