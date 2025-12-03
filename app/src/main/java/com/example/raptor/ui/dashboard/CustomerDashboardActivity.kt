@@ -14,7 +14,9 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.raptor.MainActivity
 import com.example.raptor.R
+import com.example.raptor.network.WebSocketService
 import com.google.android.material.navigation.NavigationView
+import android.util.Log
 
 /**
  * Customer Dashboard Activity
@@ -22,6 +24,10 @@ import com.google.android.material.navigation.NavigationView
  * Matches iOS CustomerRootView functionality
  */
 class CustomerDashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    companion object {
+        private const val TAG = "CustomerDashboard"
+    }
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
@@ -32,6 +38,9 @@ class CustomerDashboardActivity : AppCompatActivity(), NavigationView.OnNavigati
     private lateinit var profileInitials: TextView
     private lateinit var profileImage: ImageView
     private lateinit var profileRating: TextView
+    
+    // WebSocket service
+    private val websocketService = WebSocketService.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +55,20 @@ class CustomerDashboardActivity : AppCompatActivity(), NavigationView.OnNavigati
 
         // Load dashboard content
         loadDashboardContent()
+        
+        // Connect WebSocket voor real-time updates en data fetching
+        connectWebSocket()
+    }
+    
+    private fun connectWebSocket() {
+        // Get customer email from intent or session
+        val customerEmail = intent.getStringExtra("customer_email") ?: ""
+        
+        // Connect WebSocket voor real-time updates en data fetching
+        if (websocketService.connectionState.value !is WebSocketService.ConnectionState.Connected) {
+            websocketService.connect(customerEmail)
+            Log.d(TAG, "WebSocket connecting for customer: $customerEmail")
+        }
     }
 
     private fun initializeViews() {

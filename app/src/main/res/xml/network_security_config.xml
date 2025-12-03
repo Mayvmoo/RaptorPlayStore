@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <!-- VPS Production Server - Allow self-signed certificate -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">57.131.28.13</domain>
+        <trust-anchors>
+            <!-- Accepteer system certificates -->
+            <certificates src="system" />
+            <!-- Accepteer user-installed certificates (voor self-signed) -->
+            <certificates src="user" />
+        </trust-anchors>
+    </domain-config>
+    
     <!-- Allow cleartext (HTTP) traffic for local development with XAMPP -->
-    <base-config cleartextTrafficPermitted="true">
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">192.168.1.0</domain>
+    </domain-config>
+    
+    <!-- Base configuratie -->
+    <base-config cleartextTrafficPermitted="false">
         <trust-anchors>
             <certificates src="system" />
         </trust-anchors>
     </base-config>
-    
-    <!-- Specifiek toestaan voor localhost/emulator -->
-    <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">10.0.2.2</domain>
-        <domain includeSubdomains="true">localhost</domain>
-        <domain includeSubdomains="true">192.168.1.0</domain>
-    </domain-config>
 </network-security-config>
 
